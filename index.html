@@ -9,10 +9,24 @@
   <!--     Pollyfill Only for MsEdge and Firefox  -->
   <script src="https://unpkg.com/@webcomponents/webcomponentsjs/webcomponents-loader.js">
   </script>
+  <style type="text/css">
+    *{
+      padding: 0;
+      margin: 0;
+      font-family: Arial,Helvetica,sans-serif;
+    }
+    .title{
+      background: #222;
+      color: #fff;
+      padding: 15px 25px;
+    }
+    .containerDiv{
+      margin: 0px 10px;
+    }
+  </style>
 </head>
 
 <body>
-
   <script type="module">
     import{LitElement,html} from 'https://unpkg.com/@polymer/lit-element@latest/lit-element.js?module';
     class counterComp extends LitElement{
@@ -20,12 +34,23 @@
         super();
       }
       _render(){
-        return html`This is my <strong> First  Element </strong>.<br>Hope You Like
-    It!`; }
+        return html`
+        <style>
+          .title{
+            background: #555;
+            color: #fff;
+            padding: 15px 25px;
+          }
+        </style>
+        <div class = 'title'>This is my <strong> First  Element </strong>.<br>Hope You Like It !!</div>
+        `; }
     }
     customElements.define('counter-comp',counterComp);
   </script>
-  <counter-comp></counter-comp>
+  <div class="containerDiv">
+    <div class="title">This is Example of Shadow Dom :<br><br>
+      <counter-comp></counter-comp>
+    </div>
+  </div>
 </body>
-
 </html>
