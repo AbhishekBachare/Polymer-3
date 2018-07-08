@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Polymer3</title>
+  <!--     Pollyfill Only for MsEdge and Firefox  -->
+  <script src="https://unpkg.com/@webcomponents/webcomponentsjs/webcomponents-loader.js">
+  </script>
+</head>
+
+<body>
+
+  <script type="module">
+    import{LitElement,html} from 'https://unpkg.com/@polymer/lit-element@latest/lit-element.js?module';
+    class counterComp extends LitElement{
+      constructor(){
+        super();
+      }
+      _render(){
+        return html`This is my <strong> First  Element </strong>.<br>Hope You Like
+    It!`; }
+    }
+    customElements.define('counter-comp',counterComp);
+  </script>
+  <counter-comp></counter-comp>
+</body>
+
+</html>
